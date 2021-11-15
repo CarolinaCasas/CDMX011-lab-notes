@@ -1,9 +1,11 @@
 import catLogo from './img/catLogo.png';
+import exit from './img/exit.png';
 import './App.css';
 //Aqui van las rutas 
 
-
-function Note(){
+//Aqui se va a escribir la nota
+// Saca info que llega a NOTE la sube a firestore
+function NewNote(){
   return  (
     
     <div className="newNote"><textarea></textarea>
@@ -11,6 +13,18 @@ function Note(){
 
     </div>
     );
+}
+
+
+//Esta va a ser la funcion que imprime las notas
+//Trae la info que saca NewNote la jala desde firestore
+function Note(){
+return(
+<div className="postIt">
+
+</div>
+)
+  
  
 }
 
@@ -37,6 +51,7 @@ function App(props) {
      
       <img src={catLogo} className="catLogo" alt="catLogo"/>
       <h1>Hi!Note</h1>
+      <img src={exit} className="exitImg" alt="exitImg"/>
       </header>
      
       
