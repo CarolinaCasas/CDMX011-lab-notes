@@ -1,32 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarina&display=swap');
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  background-color: #B8A7CF;
+  flex-direction: column
+}
+.header{
+  display: flex;
+  background-color:#AA7CE9; 
+  padding: 20px;
+  margin-right: -230px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.CatandLetters{
+  display: flex;
+  align-items: flex-end
 }
+.hiNoteTittle{
+  font-family: 'Sarina', cursive;
+  font-size: 50px;
+  color: #0E1E4D;
+}
+.buttonNote{
+position: absolute;
+width: 364.37px;
+height: 83px;
+left: 886px;
+top: 150px;
+background: #F5DC87;
+border-radius: 16px;
+}
+
+.exitImg{
+  width: 100px;
+  height: 100px;
+}
+
+.catLogo{
+  width: 130px;
+  height: 130px;
+}
+
 
 @keyframes App-logo-spin {
   from {
