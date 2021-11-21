@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarina&display=swap');
+
+.App {
+  display: flex;
+  background-color: #B8A7CF;
+  flex-direction: column
+}
+.header{
+  display: flex;
+  background-color:#AA7CE9; 
+  padding: 20px;
+  margin-right: -230px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.CatandLetters{
+  display: flex;
+  align-items: flex-end
+}
+.hiNoteTittle{
+  font-family: 'Sarina', cursive;
+  font-size: 50px;
+  color: #0E1E4D;
+}
+.buttonNote{
+
+position: absolute;
+width: 340px;
+height: 83px;
+left: 886px;
+top: 200px;
+border-color: #F5DC87;
+background: #F5DC87;
+border-radius: 20px;
+font-size: 30px;
+color: #0E1E4D;
+}
+
+.exitImg{
+  width: 100px;
+  height: 100px;
+}
+
+.catLogo{
+  width: 130px;
+  height: 130px;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
