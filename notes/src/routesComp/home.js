@@ -2,73 +2,44 @@
 import catLogo from '../img/catLogo.png';
 import exit from '../img/exit.png';
 import '../App.css';
-//Aqui van las rutas
- 
-//Aqui se va a escribir la nota
-// Saca info que llega a NOTE la sube a firestore
-/* function NewNote(){
-  return  (
-   
-    <div className="newNote">
-      
-      <textarea className="textareaNote"></textarea>
-    <button>Guardar</button>
- 
-    </div>
-    );
-} */
- /*  */
- 
-//Esta va a ser la funcion que imprime las notas
-//Trae la info que saca NewNote la jala desde firestore
-/* function Note(){
-return(
-<div className="postIt">
- <h1>Aqui vala nota</h1>
-</div>
-)
- 
- 
-}
- 
-function OpenNoteButton(){
-  const NoteVisible = () =>{.textareaNote}
- 
- 
-  return(<button className="buttonNote"
-  onClick={NoteVisible}>
-    Agregar nota
-    </button>)
- 
-} */
+import { Link } from 'react-router-dom';
+import Modal from '../components/Modal.js'
+import { useModalHook } from '../Hooks/useModalHook';
 
-function OpenNoteButton(){
-  const NoteVisible = () =>{}
- 
- 
-  return(<button className="buttonNote"
-  onClick={NoteVisible}>
+
+function OpenNoteButton() {
+  const NoteVisible = () => {
+    console.log("si funciona")
+
+  }
+
+
+  return (<button className="buttonNote"
+    onClick={NoteVisible}>
     Agregar nota
-    </button>)
- 
-} 
- 
-function Home(props){ 
-return (
-  <div className="App">
-   
-    <header className="header">
-   
-    <div className="CatandLetters">
-    <img src={catLogo} className="catLogo" alt="catLogo"/>
-    <h1 className="hiNoteTittle">Hi!Note</h1>
+  </button>)
+
+}
+
+function Home(props) {
+  const [isOpenModal, openModal, closeModal] = useModalHook(false);
+  console.log([isOpenModal,openModal, closeModal]);
+  return (
+    <div className="App">
+      <header className="header">
+
+        <div className="CatandLetters">
+          <img src={catLogo} className="catLogo" alt="catLogo" />
+          <h1 className="hiNoteTittle">Hi!Note</h1>
+        </div>
+
+        <Link to="/" className="Login"><img src={exit} className="exitImg" alt="exitImg" /></Link>
+
+        <OpenNoteButton />
+      </header>
+      <Modal />
     </div>
-    <img src={exit} className="exitImg" alt="exitImg"/>
-    </header>
-   
- <OpenNoteButton/>
-  </div>
-);
+  );
 }
 
 export default Home;

@@ -2,7 +2,6 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    //Link,
     //BrowserRouter
 } from "react-router-dom";
 //import React from 'react';
@@ -18,15 +17,15 @@ function App() {
         <Router>
                 <Switch>
                     <Route path="/" exact>
-                        <Home />
+                        <Login />
                     </Route>
 
-                    <Route path="/Register" exact>
+                    <Route path="/Register">
                         <Register />
                     </Route>
 
-                    <Route path="/Login" exact>
-                        <Login />
+                    <Route path="/Home">
+                        <Home />
                     </Route>
 
                 </Switch>
