@@ -1,10 +1,11 @@
 //import { Firestore } from "@firebase/firestore";
 //import { async } from "@firebase/util";
+import './Modal.css'
 import { collection, addDoc } from "firebase/firestore";
 import React, { useState } from "react";
 import db from "../firebase/firebaseInital";
 
-function Modals() {
+function EntryNote() {
     const [note, setNote] = useState(
         {
             titleNote: '',
@@ -32,17 +33,18 @@ setNote({
         
         }
     return (
-        <form onSubmit={sendData}>
+        <form className='formNote' onSubmit={sendData}>
             <input placeholder='titulo de la nota'
                 type='text'
                 name='titleNote'
                 onChange={handleInputChange}
+                className='titleNote'
             />
-            <textarea className='newNote' name="bodyNote" onChange={handleInputChange}></textarea>
+            <textarea className='bodyNote' name="bodyNote" onChange={handleInputChange} placeholder="Escribe aqui tu nota"></textarea>
 
             <button className='addNote' type='submit'>Agregar nota</button>
         </form>
     )
 }
 
-export default Modals;
+export default EntryNote;
