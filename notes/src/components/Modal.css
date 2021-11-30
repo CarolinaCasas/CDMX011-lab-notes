@@ -1,12 +1,39 @@
-.openModal{
-    position: fixed;
+
+
+.formNote{
+    display: flex;
+    flex-direction: column;
     z-index: 999;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0,0,0,.75);
-    /* display: none; */
-    justify-content: center;
+    top: 19%;
+    /* left: 25%; */
+    width: 50%;
+    height: 65%;
+   background-color: #B8A7CF;
+    justify-content: space-around;
     align-items: center;
+    border-radius: 15px;
+}
+
+.titleNote{
+    background-color: #A9EEE6;
+    width: 500px;
+    top:0px;
+    font-size: 30px;
+}
+
+.bodyNote{
+    font-size: 30px;
+    width: 500px ;
+    top:0px;
+    height: 450px;
+    background-color: #A9EEE6;
+}
+
+.addNote{
+    font-size: 25px; 
+    border-color: #F5DC87;
+background: #F5DC87;
+border-radius: 20px;
+font-size: 30px;
+color: #0E1E4D;
 }
