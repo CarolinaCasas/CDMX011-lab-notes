@@ -19,8 +19,10 @@ function Home() {
         </div>
         <Link to="/" className="Login"><img src={exit} className="exitImg" alt="exitImg" /></Link>
       </header>
+      <div className="sectionNotes">
       <EntryNote />
       <PostNote />
+      </div>
     </div>
   );
 }

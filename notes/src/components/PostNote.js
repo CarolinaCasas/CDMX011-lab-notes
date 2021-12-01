@@ -1,36 +1,31 @@
-/* import './Modal.css'
-import { collection, addDoc } from "firebase/firestore"; */
-import React, { useEffect } from "react";
-import { collection, getDocs } from "firebase/firestore";
- import db from "../firebase/firebaseInital"; 
+import './Modal.css'
+import React, { useEffect, useState } from "react";
+import { collection, onSnapshot } from "firebase/firestore";
+import db from "../firebase/firebaseInital";
 
-function PostNote(){
-useEffect(()=>{
-   
-    const PrintNote = async()=>{
-        const notes =  await getDocs(collection(db, "notes"));
-        notes.forEach((doc) => {
+function PostNote() {
+    const [notes, setNote] = useState([]);
+    useEffect(() => {
 
-          const wholeNote={
-              title: doc.data().titleNote,
-              body: doc.data().bodyNote
-          }
-          console.log(wholeNote);
-
+        onSnapshot(collection(db, "notes"), (doc) => {
+            
+            setNote(doc.docs.map((doc) =>({...doc.data(), id: doc.id})));
         });
-        
-    }
-    PrintNote();
-})
+    });
 
 
-    return(
-        <div>
-        <p className="titleNote"></p>
-        <p className="bodyNote"></p>
+    return (
+        <div className="postNoteContainer">
+            {notes.map((note) =>(
+                <div className="postNote" key={note.id}>
+                    <p className="titleNotes">{note.titleNote}</p>
+                    <p>{note.bodyNote}</p>
+                </div>
+            )
+             )}
         </div>
     );
-    
+
 }
 
 export default PostNote;

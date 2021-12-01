@@ -49,6 +49,10 @@ color: #0E1E4D;
   height: 130px;
 }
 
+.sectionNotes{
+  display: flex;
+  align-items: baseline;
+}
 
 @keyframes App-logo-spin {
   from {
