@@ -1,0 +1,77 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+
+.formNote{
+    display: flex;
+    flex-direction: column;
+    height: 65%;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #78F5ED;
+}
+
+.titleNote{
+    background-color: #78F5ED;
+    border: none;
+    width: 300px;
+    top:0px;
+    font-size: 30px;
+}
+
+.bodyNote{
+    border: none;
+    font-size: 30px;
+    width: 300px ;
+    top:0px;
+    height: 250px;
+    background-color: #78F5ED;
+    border-radius: 10px;
+}
+
+.addNote{
+    font-size: 25px; 
+    border-color: #6abaf0;
+background: #6abaf0;
+border-radius: 20px;
+font-size: 30px;
+color: #0E1E4D;
+}
+
+.postNote{
+    border-radius: 10px; 
+    background-color:#78F5ED;
+    width: 300px ;
+    height: 300px;
+    padding: 5%;
+    margin: 5%;
+}
+
+.titleNotes{
+    font-weight: 700;
+    background-color:#78F5ED;
+    border: 50px#78F5ED;
+}
+p{
+    font-size: 30px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.editImg{
+    width: 50px;
+    height: 50px;
+}
+
+.deleteImg{
+    width: 50px;
+    height: 50px;
+}
+
+
+.buttons{
+    padding-top: 170px;
+}
