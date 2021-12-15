@@ -1,6 +1,6 @@
 //import { Firestore } from "@firebase/firestore";
 //import { async } from "@firebase/util";
-import './Modal.css'
+import './note.css'
 import { collection, addDoc } from "firebase/firestore";
 import React, { useState } from "react";
 import db from "../firebase/firebaseInital";
@@ -12,26 +12,26 @@ function EntryNote() {
             bodyNote: ''
         });
 
-        const handleInputChange = (event) =>{
-setNote({
-    ...note,
-    [event.target.name] : event.target.value
-})
-        }
+    const handleInputChange = (event) => {
+        setNote({
+            ...note,
+            [event.target.name]: event.target.value
+        })
+    }
 
 
-        const sendData = async(event)=>{
-            event.preventDefault();
-            console.log(note.titleNote+' '+ note.bodyNote)
+    const sendData = async (event) => {
+        event.preventDefault();
+        console.log(note.titleNote + ' ' + note.bodyNote)
 
-                const docRef = await addDoc(collection(db, "notes"), {
-                    titleNote: note.titleNote,
-                    bodyNote: note.bodyNote
-                });
-                console.log("Document written with ID: ", docRef.id);
-              
-        
-        }
+        const docRef = await addDoc(collection(db, "notes"), {
+            titleNote: note.titleNote,
+            bodyNote: note.bodyNote
+        });
+        console.log("Document written with ID: ", docRef.id);
+
+
+    }
     return (
         <form className='formNote' onSubmit={sendData}>
             <input placeholder='titulo de la nota'

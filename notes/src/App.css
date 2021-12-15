@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Sarina&display=swap');
+*{
+  margin:0px;
+  padding: 0px;
+}
+
 body{
   background-color: #B8A7CF;
 }
@@ -50,8 +55,9 @@ color: #0E1E4D;
 }
 
 .sectionNotes{
+  width: 1230px;
+  padding-top: 5%;
   display: flex;
-  align-items: baseline;
 }
 
 @keyframes App-logo-spin {
