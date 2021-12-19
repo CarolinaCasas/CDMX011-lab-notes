@@ -39,9 +39,9 @@ function EntryNote() {
                 name='titleNote'
                 onChange={handleInputChange}
                 className='titleNote'
-            />
+            /><br/>
             <textarea className='bodyNote' name="bodyNote" onChange={handleInputChange} placeholder="Escribe aqui tu nota"></textarea>
-
+            <br/>
             <button className='addNote' type='submit'>Agregar nota</button>
         </form>
     )

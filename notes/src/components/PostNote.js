@@ -30,12 +30,10 @@ function PostNote() {
         <div className="postNoteContainer">
             {notes.map((note) =>(
                 <div className="postNote" key={note.id}>
-                    <p className="titleNotes">{note.titleNote}</p>
-                    <p>{note.bodyNote}</p>
-                    <div className="buttons">
+                    <p className="titleNotes">{note.titleNote}</p><br/>
+                    <p>{note.bodyNote}</p><br/>
                     <img src={edit} className="editImg" alt="editImg" />
                     <img src={deleteImg} className="deleteImg" alt="deleteImg" onClick={()=>{DeleteNote(note.id)}}/>
-                    </div>
                 </div>
             )
              )}

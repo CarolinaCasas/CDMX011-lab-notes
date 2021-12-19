@@ -1,18 +1,24 @@
-import React from 'react'
 import { Link } from 'react-router-dom';
 
-function Register(){
-return(
+function Register() {
+  return (
     <div>
-        <h1>Register</h1>
-        <Link to="/home" className="Login"><button>Registrarse</button></Link>
-       
+      <h1>Hi!note</h1>
 
-        <h2>¿Ya tienes una cuenta?</h2>
-            <h2>Inicia sesión</h2>
-            <Link to="/" className="Login">aquí</Link>
+      <form>
+        <input placeholder='Ingresa correo' /><br/>
+        <input placeholder='Crea contraseña' /><br/>
+        <input placeholder='Confirma contraseña' /><br/>
+        <Link to="/home" className="home"><button>Registrarse</button></Link>
+      </form>
+      <section>
+        <h2>¿Ya tienes una cuenta?<br/>
+        Inicia sesión <Link to="/" className="Login">aquí</Link></h2>
+        <hr/>
+        <h2>Iniciar sesión con Google</h2>
+      </section>
     </div>
-)
+  )
 }
 
 export default Register
