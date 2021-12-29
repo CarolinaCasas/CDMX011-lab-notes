@@ -14,24 +14,40 @@ body{
 }
 .header{
   display: flex;
+  justify-content: space-between;
   background-color:#AA7CE9; 
   padding: 20px;
   margin-right: -230px;
   align-items: center;
-  justify-content: space-between;
 }
 
 .CatandLetters{
+  margin: 5px;
   display: flex;
   align-items: flex-end
 }
+
+.catLogo{
+  height: 130px;
+}
+
 .hiNoteTittle{
   font-family: 'Sarina', cursive;
-  font-size: 50px;
+  margin-top: 5px;
+  font-size: 60px;
   color: #0E1E4D;
 }
-.buttonNote{
+.addNoteButton{
+  position: absolute;
+width: 459px;
+height: 93px;
+left: 740px;
+top: 240px;
 
+background: #6EF5F0;
+border-radius: 20px;
+}
+.buttonNote{
 position: absolute;
 width: 340px;
 height: 83px;
@@ -49,24 +65,11 @@ color: #0E1E4D;
   height: 100px;
 }
 
-.catLogo{
-  width: 130px;
-  height: 130px;
-}
 
 .sectionNotes{
   width: 1230px;
   padding-top: 5%;
   display: flex;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 /* login-section */
@@ -165,3 +168,9 @@ font-size: 30px;
   input::placeholder {  
     padding-left: 20px; 
 } 
+
+/* register-section */
+
+.Login{
+  color:#F73859;
+}

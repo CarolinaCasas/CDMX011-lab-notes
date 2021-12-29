@@ -1,5 +1,5 @@
 import './note.css'
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { collection, onSnapshot, doc, deleteDoc} from "firebase/firestore";
 import db from "../firebase/firebaseInital";
 import edit from '../img/edit.png';
@@ -27,7 +27,7 @@ function PostNote() {
  
 
     return (
-        <div className="postNoteContainer">
+        <Fragment>
             {notes.map((note) =>(
                 <div className="postNote" key={note.id}>
                     <p className="titleNotes">{note.titleNote}</p><br/>
@@ -37,7 +37,7 @@ function PostNote() {
                 </div>
             )
              )}
-        </div>
+        </Fragment>
     );
 
 }

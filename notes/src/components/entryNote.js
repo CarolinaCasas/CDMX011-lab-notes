@@ -30,7 +30,13 @@ function EntryNote() {
         });
         console.log("Document written with ID: ", docRef.id);
 
+        setNote({
+            titleNote:'',
+            bodyNote:''
+        }
+        )
 
+        console.log('aqui'+note.titleNote+note.bodyNote);
     }
     return (
         <form className='formNote' onSubmit={sendData}>
@@ -39,8 +45,13 @@ function EntryNote() {
                 name='titleNote'
                 onChange={handleInputChange}
                 className='titleNote'
+                value={note.titleNote}
             /><br/>
-            <textarea className='bodyNote' name="bodyNote" onChange={handleInputChange} placeholder="Escribe aqui tu nota"></textarea>
+            <textarea className='bodyNote'
+             name="bodyNote"
+              onChange={handleInputChange} 
+              placeholder="Escribe aqui tu nota"
+              value={note.bodyNote}></textarea>
             <br/>
             <button className='addNote' type='submit'>Agregar nota</button>
         </form>
