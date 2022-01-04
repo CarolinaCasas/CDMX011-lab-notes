@@ -4,10 +4,13 @@ import './note.css'
 import { collection, addDoc } from "firebase/firestore";
 import React, { useState } from "react";
 import db from "../firebase/firebaseInital";
+import more from '../img/more.png';
+import Modal from '../components/Modal'
 
 /* import Home from '../routesComp/home' */
 
-function EntryNote(changeState) {
+function EntryNote() {
+    const [modalState, setModalState] = useState(false)
     const [note, setNote] = useState(
         {
             titleNote: '',
@@ -21,7 +24,6 @@ function EntryNote(changeState) {
         })
     }
 
-
     const sendData = async (event) => {
         event.preventDefault();
         console.log(note.titleNote + ' ' + note.bodyNote)
@@ -33,36 +35,45 @@ function EntryNote(changeState) {
         console.log("Document written with ID: ", docRef.id);
 
         setNote({
-            titleNote:'',
-            bodyNote:''
+            titleNote: '',
+            bodyNote: ''
         }
         )
-
-        console.log('aqui'+note.titleNote+note.bodyNote);
+        //manipula el estado del modal para cerrarlo despues de publicar la nota
+        setModalState(!modalState);
 
     }
 
 
 
+
     return (
-       <div>
-        <form className='formNote' onSubmit={sendData}>
-            <input placeholder='titulo de la nota'
-                type='text'
-                name='titleNote'
-                onChange={handleInputChange}
-                className='titleNote'
-                value={note.titleNote}
-            /><br/>
-            <textarea className='bodyNote'
-             name="bodyNote"
-              onChange={handleInputChange} 
-              placeholder="Escribe aqui tu nota"
-              value={note.bodyNote}></textarea>
-            <br/>
-            <button className='addNote' type='submit'>Agregar nota</button>
-        </form>
-        </div>
+        <>
+            <button className='addNoteButton' onClick={() => setModalState(!modalState)}>
+                <img src={more} className="addnoteImg" alt='more' />Agregar nota
+            </button>
+            <Modal
+                state={modalState}
+                changeState={setModalState}>
+                <form className='formNote' onSubmit={sendData} >
+                    <input placeholder='titulo de la nota'
+                        type='text'
+                        name='titleNote'
+                        onChange={handleInputChange}
+                        className='titleNote'
+                        value={note.titleNote}
+                    /><br />
+                    <textarea className='bodyNote'
+                        name="bodyNote"
+                        onChange={handleInputChange}
+                        placeholder="Escribe aqui tu nota"
+                        value={note.bodyNote}>
+                    </textarea>
+                    <br />
+                    <button className='addNote' type='submit'>Agregar nota</button>
+                </form>
+            </Modal>
+        </>
     )
 }
 
