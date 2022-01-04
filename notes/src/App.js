@@ -10,6 +10,7 @@ import Home from './routesComp/home'
 import Login from './routesComp/login'
 import Register from './routesComp/register'
 
+
 //https://johnserrano.co/blog/aprende-a-crear-rutas-con-react-router
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                     <Route path="/Home">
                         <Home />
                     </Route>
+
 
                 </Switch>
         </Router>
